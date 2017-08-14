@@ -18,89 +18,190 @@
       
     </p>
     
-    <h2 id="version-1-2">Version 1.2</h2>
-    
-    <p>These are the elements supported by the latest version of Wordpress. These elements are undocumented so we offer a description.</p>
+    <h2 id="version-1-3">Version 1.3 Draft</h2>
 <p><strong>&lt;title&gt;</strong> Contains the title of the site.</p>
-<p><strong>&lt;link&gt;</strong> Is the URL of the site as determined by WordPress.</p>
-<p><strong>&lt;description&gt;</strong> Is a tagline that can be modified in the Dashboard under Settings, General Settings, Tagline General Settings.</p>
-<p><strong>&lt;pubDate&gt;</strong> Was the time and date that the WXR document was created. It is in the RFC-822 format http://asg.web.cmu.edu/rfc/rfc822.html as required by the Rss standard. The format should be self explanatory except for the last numeric value which represents the local differential from GMT using a +/-hhmm format. Plus 2 hours from GMT would be represented as +0200. The WordPress time zone can be changed in the Dashboard under Settings, General Settings, Timezone General Settings, Timezone.</p>
-<p><strong>&lt;language&gt;</strong> Is the primary language the site is written in as determined by Settings, General Settings, Language in the WordPress Dashboard. A list of valid codes used to represent the language can be found at http://www.rssboard.org/rss-language-codes.</p>
-<p><strong>&lt;wp: wxr_version&gt;</strong> This is our first example of an extended Rss element. We can recognise that it does not belong to the Rss specification as the element contains a colon. Left of the colon contains the elements extension while right is the element name. wp:wxr_version is the version number for the WordPress extension Rss. At the last update to this article in December 2013 the version number was at 1.2.</p>
-<p><strong>&lt;wp:base_site_url&gt;</strong> Is the root URL  of the WordPress hosting provider.</p>
-<p><strong>&lt;wp:base_blog_url&gt;</strong> Is the root URL of the WordPress site.</p>
-<p><strong>&lt;wp:wp:wp_author&gt;</strong> Contains details on the authors of the site. Each author gets their own wp_author container.</p>
-<p><strong>&lt;wp:author_login&gt;</strong> Is the author’s WordPress login user name.</p>
-<p><strong>&lt;wp:author_email&gt;</strong> Is the author’s e-mail address associated with their WordPress account.</p>
-<p><strong>&lt;wp:author_display_name&gt;</strong> Is the author’s public display name used in instead of the login user name for comments and posts.</p>
-<p><strong>&lt;wp:author_first_name&gt;</strong> Is the author’s first name.</p>
-<p><strong>&lt;wp:author_last_name&gt;</strong> Is the author’s last name.</p>
-<p><strong>&lt;wp:category&gt;</strong> Each container holds information on a category used by the site for the classification of posts. Contains a complete collection of categories associated with the blog. You can view and edit the list within the WordPress Dashboard under Posts, Categories. Each category is given its own &lt;category&gt; element and contains the following 3 4 child elements.
-&lt;wp:term_idname&gt; Is a unique numeric identifier assigned by WordPress to this category. It is found in URL strings that reference this category.</p>
-<p><strong>&lt;wp:category_nicename&gt;</strong> Is the category name in a URL friendly format.</p>
-<p><strong>&lt;wp:category_parent&gt;</strong> If the category belongs to a hierarchy then the parent category is listed.</p>
-<p><strong>&lt;wp:cat_name&gt;</strong>&lt;![CDATA[]]&gt; The original name of the category contained within an unparsed character data enclosure.</p>
-<p><strong>&lt;wp:tag&gt;</strong> Contains a complete collection of the tags assigned to posts. You can view and edit the tags within the Dashboard under Posts, Posts Tags. It contains the following 2 3 child elements.</p>
-<p><strong>&lt;wp:term_idname&gt;</strong>Is a unique numeric identifier assigned by WordPress to this tag. It is found in URL strings that reference this tag.</p>
-<p><strong>&lt;wp:tag_slug&gt;</strong> Is the URL friendly name of the tag.</p>
-<p><strong>&lt;wp:tag_name&gt;</strong> Is the original name of the tag contained within an unparsed character data enclosure.</p>
-<p><strong>&lt;generator&gt;</strong> Is the name or a URL pointing to the homepage of the application that was used to create the Rss document.</p>
-<p><strong>&lt;cloud&gt;</strong> Is a pointer to the RssCloud API which is a blog monitoring service supported by WordPress.com. It enables a supporting client to receive instant notification when the blog is updated. http://www.rssboard.org/rsscloud-interface</p>
-<p><strong>&lt;image&gt;</strong> Is a logo belonging to the site that can be displayed by Rss clients. You can modify the logo under the General Settings, Blog Picture / Icon dialog in the Dashboard under Settings, General, Big Picture / Icon. There are strict size and image formats requirements imposed by the Rss standard. http://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt</p>
-<p><strong>&lt;atom:link rel="search"&gt;</strong> Is a URL pointing to the Open Search description document supplied by WordPress. It enables supported Rss clients and web browsers an easy means to provide search terms to the blog and receive results in a standardised XML format. http://www.opensearch.org/Specifications/OpenSearch/1.1#OpenSearch_description_document</p>
-<p><strong>&lt;atom:link rel="pub"&gt;</strong> Is a URL pointing to the Google designed pubsubhubbub notification service that is supported by WordPress. In my opinion this is easier to implement and use then the alternative &lt;cloud&gt; service that offers similar functionality. http://code.google.com/p/pubsubhubbub/</p>
-<p>That is the end of the Rss metadata related elements. Below are the list of child elements contained within the &lt;item&gt;&lt;/item&gt; elements. Items are repeated multiple times as each item holds a single blog post, article or page. Items contain the details of the unique resources used by the WordPress site. These include Posts, Pages and Media.</p>
+<p><strong></strong> Is the URL of the site as determined by WordPress.</p>
+<p><strong></strong> Is a tagline that can be modified in the Dashboard under Settings, General Settings, Tagline General Settings.</p>
+<p><strong></strong> Was the time and date that the WXR document was created. It is in the RFC-822 format <a href="http://asg.web.cmu.edu/rfc/rfc822.html">http://asg.web.cmu.edu/rfc/rfc822.html</a> as required by the Rss standard. The format should be self explanatory except for the last numeric value which represents the local differential from GMT using a +/-hhmm format. Plus 2 hours from GMT would be represented as +0200. The WordPress time zone can be changed in the Dashboard under Settings, General Settings, Timezone General Settings, Timezone.</p>
+<p><strong></strong> Is the primary language the site is written in as determined by Settings, General Settings, Language in the WordPress Dashboard. A list of valid codes used to represent the language can be found at <a href="http://www.rssboard.org/rss-language-codes">http://www.rssboard.org/rss-language-codes</a>.</p>
+<p><strong>wp:wxr_version</strong> This is our first example of an extended Rss element. We can recognise that it does not belong to the Rss specification as the element contains a colon. Left of the colon contains the elements extension while right is the element name. wp:wxr_version is the version number for the WordPress extension Rss. At the last update to this article in December 2013 the version number was at 1.2.</p>
+<p><strong>wp:base_site_url</strong> Is the root URL  of the WordPress hosting provider.</p>
+<p><strong>wp:base_blog_url</strong> Is the root URL of the WordPress site.</p>
+<p><strong>wp:next_page</strong> URL of the next page</p>
+<p><strong>wp:category</strong> Each container holds information on a category used by the site for the classification of posts. Contains a complete collection of categories associated with the blog. You can view and edit the list within the WordPress Dashboard under Posts, Categories. Each category is given its own  element and contains the following 3 4 child elements.
+wp:term_idname Is a unique numeric identifier assigned by WordPress to this category. It is found in URL strings that reference this category.</p>
+<p><strong>wp:category_nicename</strong> Is the category name in a URL friendly format.</p>
+<p><strong>wp:category_parent</strong> If the category belongs to a hierarchy then the parent category is listed.</p>
+<p><strong>wp:cat_name</strong> The original name of the category contained within an unparsed character data enclosure.</p>
+<p><strong>wp:tag</strong> Contains a complete collection of the tags assigned to posts. You can view and edit the tags within the Dashboard under Posts, Posts Tags. It contains the following 2 3 child elements.</p>
+<p>**wp:term_idname**Is a unique numeric identifier assigned by WordPress to this tag. It is found in URL strings that reference this tag.</p>
+<p><strong>wp:tag_slug</strong> Is the URL friendly name of the tag.</p>
+<p><strong>wp:tag_name</strong> Is the original name of the tag contained within an unparsed character data enclosure.</p>
+<p><strong></strong> Is the name or a URL pointing to the homepage of the application that was used to create the Rss document.</p>
+<p><strong></strong> Is a pointer to the RssCloud API which is a blog monitoring service supported by WordPress.com. It enables a supporting client to receive instant notification when the blog is updated. <a href="http://www.rssboard.org/rsscloud-interface">http://www.rssboard.org/rsscloud-interface</a></p>
+<p><strong><a href="" target="_blank"><img style="max-width:100%;"></a></strong> Is a logo belonging to the site that can be displayed by Rss clients. You can modify the logo under the General Settings, Blog Picture / Icon dialog in the Dashboard under Settings, General, Big Picture / Icon. There are strict size and image formats requirements imposed by the Rss standard. <a href="http://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt">http://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt</a></p>
+<p><strong>&lt;atom:link rel="search"&gt;</strong> Is a URL pointing to the Open Search description document supplied by WordPress. It enables supported Rss clients and web browsers an easy means to provide search terms to the blog and receive results in a standardised XML format. <a href="http://www.opensearch.org/Specifications/OpenSearch/1.1#OpenSearch_description_document">http://www.opensearch.org/Specifications/OpenSearch/1.1#OpenSearch_description_document</a></p>
+<p><strong>&lt;atom:link rel="pub"&gt;</strong> Is a URL pointing to the Google designed pubsubhubbub notification service that is supported by WordPress. In my opinion this is easier to implement and use then the alternative  service that offers similar functionality. <a href="http://code.google.com/p/pubsubhubbub/">http://code.google.com/p/pubsubhubbub/</a></p>
+<p>That is the end of the Rss metadata related elements. Below are the list of child elements contained within the  elements. Items are repeated multiple times as each item holds a single blog post, article or page. Items contain the details of the unique resources used by the WordPress site. These include Posts, Pages and Media.</p>
+<h2><a id="user-content-the-item-element" class="anchor" href="#the-item-element" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The item element</h2>
 <p><strong>&lt;title&gt;</strong> Is the Title for a page and a post or the Name for media. Title of the blog post or page.</p>
-<p><strong>&lt;link&gt;</strong> Is the site URL that points to the site page that displays the item. URL to the blog post or page.</p>
-<p><strong>&lt;pubDate&gt;</strong> Time and date the item posted to the site formatted to the RFC 822 specification. that the post was posted online.</p>
-<p><strong>&lt;dc:creator&gt;</strong> Lists the author of the item using the user name found in &lt;wp:author_login&gt; post. The element is a Dublin Core Rss extension as the Rss specification doesn’t contain any suitable elements for this role.</p>
-<p><strong>&lt;guid&gt;</strong> Is the globally unique identifier used for the identification of the blog post item by Rss and WordPress clients. The isPermaLink=false attribute just means according to the Rss standard should mean that this identifier is not a legitimate website URL and is not usable in a web browser. Though in WXR the URLs are valid and point to the asset.</p>
-<p><strong>&lt;description&gt;</strong> In Rss documents this element contains the synopsis of the item but in WXR it is left blank.</p>
-<p><strong>&lt;content:encoded&gt;</strong> Is the replacement for the restrictive Rss &lt;description&gt; element. Enclosed within a character data enclosure is the complete WordPress formatted blog post or page complete with HTML tags and all. For media this contains the Description which is also formatted in HTML.</p>
-<p><strong>&lt;excerpt:encoded&gt;</strong> This contains a Caption used by media. This is an unknown element. This is a summary or description of the post often used by RSS/Atom feeds.</p>
-<p><strong>&lt;wp:post_id&gt;</strong> This is an auto-incremental, numeric, unique identification number given to each post, article media or page.</p>
-<p><strong>&lt;wp:post_date&gt;</strong> Time and date that the post item was published to the site.</p>
-<p><strong>&lt;wp:post_date_gmt&gt;</strong> Time and date in GMT that the post item was published to the site.</p>
-<p><strong>&lt;wp:comment_status&gt;</strong> A value stating whether public access for posting comments is opened or closed.</p>
-<p><strong>&lt;wp:post_name&gt;</strong> Is a unique, URL friendly nicename based on the post title at the time of the first save.</p>
-<p><strong>&lt;wp:status&gt;</strong> Publish status of the post item with the options;  publish, draft, pending, private, trash, inherit.</p>
-<p><strong>&lt;wp:post_parent&gt;</strong> The numeric identification number if the post’s parent item. I think this is applicable to WordPress pages which can be nested within each other.</p>
-<p><strong>&lt;wp:menu_order&gt;</strong> I assume is related to menu navigation of nested pages.</p>
-<p><strong>&lt;wp:post_type&gt;</strong> Item Post type either post, page, attachment media.</p>
-<p><strong>&lt;wp:post_password&gt;</strong> A non-encrypted password used by WordPress to restrict reading access to the post.</p>
-<p><strong>&lt;wp:is_sticky&gt;</strong> A numeric Boolean value (0 is false, 1 is true) to determine if the post as a sticky. A sticky post means the post will be displayed before all other non-sticky posts.</p>
-<p><strong>&lt;wp:attachment_url&gt;</strong> The URL that points to the media item source. The URL could be used to display in a browser or used in an application to download the media.</p>
-<p><strong>&lt;category&gt;</strong> Each category or tag associated with the item is given 2 category attributes. The domain attribute lists either post_tag or category while the nickname is the URL friendly name. Media items are not given category tags. elements. The first element contains just the category as a name, while the second element contains both the category name and the URL friendly nicename attribute.</p>
-<p><strong>&lt;wp:postmeta&gt;</strong> Are containers for newer additions the WXR document format that have not been given their own WXR tags. have been introduced after the original WXR specification. Each &lt;wp:postmeta&gt; element contains 2 child elements.
-&lt;wp:meta_key&gt; Is URL friendly reference key for the meta data element.
-&lt;wp:meta_value&gt; Is the value for the meta data element contained within a character data enclosure.</p>
-<p>Below are some of the &lt;wp:meta_key&gt; references currently used by WXR.</p>
-<p>delicious; is data related to the Delicious social bookmarking web service. http://www.delicious.com/
-geo<em>latitude; is the positioning location of the author when submitted the post. The value is the latitude in degrees using the World Geodetic System 1984 (WGS84) datum. It seems to be based on the Google Gears Geolocation API. http://code.google.com/apis/gears/api_geolocation.html
+<p><strong></strong> Is the site URL that points to the site page that displays the item. URL to the blog post or page.</p>
+<p><strong></strong> Time and date the item posted to the site formatted to the RFC 822 specification. that the post was posted online.</p>
+<p><strong>dc:creator</strong> Lists the author of the item using the user name found in wp:author_login post. The element is a Dublin Core Rss extension as the Rss specification doesn’t contain any suitable elements for this role.</p>
+<p><strong></strong> Is the globally unique identifier used for the identification of the blog post item by Rss and WordPress clients. The isPermaLink=false attribute just means according to the Rss standard should mean that this identifier is not a legitimate website URL and is not usable in a web browser. Though in WXR the URLs are valid and point to the asset.</p>
+<p><strong></strong> In Rss documents this element contains the synopsis of the item but in WXR it is left blank.</p>
+<p><strong>content:encoded</strong> Is the replacement for the restrictive Rss  element. Enclosed within a character data enclosure is the complete WordPress formatted blog post or page complete with HTML tags and all. For media this contains the Description which is also formatted in HTML.</p>
+<p><strong>excerpt:encoded</strong> This contains a Caption used by media. This is an unknown element. This is a summary or description of the post often used by RSS/Atom feeds.</p>
+<p><strong>wp:post_id</strong> This is an auto-incremental, numeric, unique identification number given to each post, article media or page.</p>
+<p><strong>wp:post_date</strong> Time and date that the post item was published to the site.</p>
+<p><strong>wp:post_date_gmt</strong> Time and date in GMT that the post item was published to the site.</p>
+<p><strong>wp:comment_status</strong> A value stating whether public access for posting comments is opened or closed.</p>
+<p><strong>wp:post_name</strong> Is a unique, URL friendly nicename based on the post title at the time of the first save.</p>
+<p><strong>wp:status</strong> Publish status of the post item with the options;  publish, draft, pending, private, trash, inherit.</p>
+<p><strong>wp:post_parent</strong> The numeric identification number if the post’s parent item. I think this is applicable to WordPress pages which can be nested within each other.</p>
+<p><strong>wp:menu_order</strong> I assume is related to menu navigation of nested pages.</p>
+<p><strong>wp:post_type</strong> Item Post type either post, page, attachment media.</p>
+<p><strong>wp:post_password</strong> A non-encrypted password used by WordPress to restrict reading access to the post.</p>
+<p><strong>wp:is_sticky</strong> A numeric Boolean value (0 is false, 1 is true) to determine if the post as a sticky. A sticky post means the post will be displayed before all other non-sticky posts.</p>
+<p><strong>wp:attachment_url</strong> The URL that points to the media item source. The URL could be used to display in a browser or used in an application to download the media.</p>
+<p><strong></strong> Each category or tag associated with the item is given 2 category attributes. The domain attribute lists either post_tag or category while the nickname is the URL friendly name. Media items are not given category tags. elements. The first element contains just the category as a name, while the second element contains both the category name and the URL friendly nicename attribute.</p>
+<p><strong>wp:postmeta</strong> Are containers for newer additions the WXR document format that have not been given their own WXR tags. have been introduced after the original WXR specification. Each wp:postmeta element contains 2 child elements.</p>
+<p><strong>wp:meta_key</strong> Is URL friendly reference key for the meta data element.
+<strong>wp:meta_value</strong> Is the value for the meta data element contained within a character data enclosure.</p>
+<p>Below are some of the wp:meta_key references currently used by WXR.</p>
+<p>delicious; is data related to the Delicious social bookmarking web service. <a href="http://www.delicious.com/">http://www.delicious.com/</a>
+geo_latitude; is the positioning location of the author when submitted the post. The value is the latitude in degrees using the World Geodetic System 1984 (WGS84) datum. It seems to be based on the Google Gears Geolocation API. <a href="http://code.google.com/apis/gears/api_geolocation.html">http://code.google.com/apis/gears/api_geolocation.html</a>
 geo_longitude; is the positioning location of the author when they submitted the post. The value is the longitude coordinates.
 geo_accuracy; is the horizontal accuracy of the above positioning values in metres.
 geo_address; is the address determined by the above geolocation data.
 geo_public; is a Boolean numeric value that determines if the geolocation data should be displayed in the post.
-_wpas</em>; related tags may have something to do with the WordPress Sharing services.
-reddit; is data related to the reddit social news web service. http://www.reddit.com/</p>
-<p><strong>&lt;wp:comment&gt;</strong> Is a child element for the post item that contains 12 13 sub-elements listed below. These sub-elements belong to the a single post comment contained within a &lt;wp:comment&gt; element set.</p>
-<p><strong>&lt;wp:comment_id&gt;</strong>This is an auto-incremental, numeric, unique identification number given to each comment.</p>
-<p><strong>&lt;wp:comment_author&gt;</strong> The name of author who submitted the comment. The name value is contained within an unparsed character data enclosure.</p>
-<p><strong>&lt;wp:comment_author_email&gt;</strong> An e-mail address provided by the author of the comment.</p>
-<p><strong>&lt;wp:comment_author_url&gt;</strong> The URL of the author’s website provided by the author of the comment.</p>
-<p><strong>&lt;wp:comment_author_IP&gt;</strong> The IP address belonging to the author of the comment. The IP address is automatically recorded by WordPress.</p>
-<p><strong>&lt;wp:comment_date&gt;</strong> The date and time local to the blog that the comment was posted.</p>
-<p><strong>&lt;wp:comment_date_gmt&gt;</strong> The date and time at GMT that the comment was posted.</p>
-<p><strong>&lt;wp:comment_content&gt;</strong> The comment text enclosed within a character data enclosure.</p>
-<p><strong>&lt;wp:comment_approved&gt;</strong> A numeric Boolean value to determine if the comment is displayed.</p>
-<p><strong>&lt;wp:comment_type</strong>&gt; The type of comment. If left blank it is classed as a normal comment. A value of pingback or trackback means it is a post request notification link http://en.wikipedia.org/wiki/Trackback.</p>
-<p><strong>&lt;wp:comment_parent&gt;</strong> The numeric identification of the parent comment used when the comment is a response to a pre-existing comment.</p>
-<p><strong>&lt;wp:comment_user_id&gt;</strong> A numeric identification belonging to the author if they were logged in when they submitted the comment.</p>
-<p><strong>&lt;wp:comment_metadata&gt;</strong> Seems to offer additional data much like the earlier &lt;wp:postmeta&gt; tag.</p>
-<h2 id="version-1-2b">Version 1.2b</h2>
-    <p>These are the elements not supported by Wordpress.</p>
-<p><strong>&lt;wp:subtitle&gt;</strong> Subtitle for news websites</p>
-<p><strong>&lt;wp:antetitle&gt;</strong> Antetitle for news websites</p>
+<em>wpas</em>; related tags may have something to do with the WordPress Sharing services.
+reddit; is data related to the reddit social news web service. <a href="http://www.reddit.com/">http://www.reddit.com/</a></p>
+<p><strong>wp:comment</strong> Is a child element for the post item that contains 12 13 sub-elements listed below. These sub-elements belong to the a single post comment contained within a wp:comment element set.</p>
+<p><strong>wp:comment_id</strong> This is an auto-incremental, numeric, unique identification number given to each comment.</p>
+<p><strong>wp:comment_author</strong> The name of author who submitted the comment. The name value is contained within an unparsed character data enclosure.</p>
+<p><strong>wp:comment_author_email</strong> An e-mail address provided by the author of the comment.</p>
+<p><strong>wp:comment_author_url</strong> The URL of the author’s website provided by the author of the comment.</p>
+<p><strong>wp:comment_author_IP</strong> The IP address belonging to the author of the comment. The IP address is automatically recorded by WordPress.</p>
+<p><strong>wp:comment_date</strong> The date and time local to the blog that the comment was posted.</p>
+<p><strong>wp:comment_date_gmt</strong> The date and time at GMT that the comment was posted.</p>
+<p><strong>wp:comment_content</strong> The comment text enclosed within a character data enclosure.</p>
+<p><strong>wp:comment_approved</strong> A numeric Boolean value to determine if the comment is displayed.</p>
+<p><strong>wp:comment_type</strong> The type of comment. If left blank it is classed as a normal comment. A value of pingback or trackback means it is a post request notification link <a href="http://en.wikipedia.org/wiki/Trackback">http://en.wikipedia.org/wiki/Trackback</a>.</p>
+<p><strong>wp:comment_parent</strong> The numeric identification of the parent comment used when the comment is a response to a pre-existing comment.</p>
+<p><strong>wp:comment_user_id</strong> A numeric identification belonging to the author if they were logged in when they submitted the comment.</p>
+<p><strong>wp:comment_metadata</strong> Seems to offer additional data much like the earlier wp:postmeta tag.</p>
+<p><strong>wp:wp_author</strong> Contains details on the authors of the site. Each author gets their own wp_author container.</p>
+<p><strong>wp:relateds</strong> Container for related items</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">rss</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">media</span>=<span class="pl-s"><span class="pl-pds">"</span>http://search.yahoo.com/mrss/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">dcterms</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/dc/terms/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">fh</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/syndication/history/1.0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">channel</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;LBC&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">link</span>&gt;http://www.lbc.co.uk&lt;/<span class="pl-ent">link</span>&gt;
+        &lt;<span class="pl-ent">description</span>&gt;LBC Videos&lt;/<span class="pl-ent">description</span>&gt;
+        &lt;<span class="pl-ent">item</span>&gt;
+            &lt;<span class="pl-ent">guid</span> <span class="pl-e">isPermaLink</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>&gt;g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2&lt;/<span class="pl-ent">guid</span>&gt;
+            &lt;<span class="pl-ent">title</span>&gt;May's Dinner With Juncker: The Inside Story&lt;/<span class="pl-ent">title</span>&gt;
+            &lt;<span class="pl-ent">description</span>&gt;This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.&lt;/<span class="pl-ent">description</span>&gt;
+            &lt;<span class="pl-ent">link</span>&gt;http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX&lt;/<span class="pl-ent">link</span>&gt;
+            &lt;<span class="pl-ent">enclosure</span> <span class="pl-e">url</span>=<span class="pl-s"><span class="pl-pds">"</span>http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX<span class="pl-pds">"</span></span> <span class="pl-e">length</span>=<span class="pl-s"><span class="pl-pds">"</span>3342<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>application/x-shockwave-flash<span class="pl-pds">"</span></span> &gt;&lt;/<span class="pl-ent">enclosure</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">content</span> <span class="pl-e">url</span>=<span class="pl-s"><span class="pl-pds">"</span>http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>video/x--flv<span class="pl-pds">"</span></span> 
+expression=<span class="pl-s"><span class="pl-pds">"</span>sample<span class="pl-pds">"</span></span> <span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>3342<span class="pl-pds">"</span></span> <span class="pl-e">bitrate</span>=<span class="pl-s"><span class="pl-pds">"</span>3192<span class="pl-pds">"</span></span> <span class="pl-e">lang</span>=<span class="pl-s"><span class="pl-pds">"</span>eng<span class="pl-pds">"</span></span> &gt;&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">content</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">title</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>plain<span class="pl-pds">"</span></span>&gt;May's Dinner With Juncker: The Inside Story&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">title</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">description</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>html<span class="pl-pds">"</span></span>&gt;This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">description</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">thumbnail</span> <span class="pl-e">url</span>=<span class="pl-s"><span class="pl-pds">"</span>http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/promo317917984<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>1280<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s"><span class="pl-pds">"</span>720<span class="pl-pds">"</span></span> <span class="pl-e">time</span>=<span class="pl-s"><span class="pl-pds">"</span>3342<span class="pl-pds">"</span></span> &gt;&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">thumbnail</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">category</span> <span class="pl-e">label</span>=<span class="pl-s"><span class="pl-pds">"</span>Entertainment/Celebrity News<span class="pl-pds">"</span></span>&gt;Entertainment/Celebrity News&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">category</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">text</span>&gt;This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">text</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">keywords</span>&gt;LBC,Video Feature,Interview,Over 3 mins,AOL One - LBC,Dailymotion - LBC,&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">keywords</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">activation</span>&gt;&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">activation</span>&gt;
+            &lt;<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">expiration</span>&gt;&lt;/<span class="pl-ent">media</span><span class="pl-ent">:</span><span class="pl-ent">expiration</span>&gt;
+            &lt;<span class="pl-ent">pubDate</span>&gt;Mon, 01 May 2017 14:32:50 GMT&lt;/<span class="pl-ent">pubDate</span>&gt;
+        &lt;/<span class="pl-ent">item</span>&gt;
+        &lt;<span class="pl-ent">next_page</span>&gt;
+            <span class="pl-s"><span class="pl-pds">&lt;![CDATA[</span>http://api.ooyala.com/v2/syndications/23/feed?pcode=44&amp;page_token=1<span class="pl-pds">]]&gt;</span></span>
+        &lt;/<span class="pl-ent">next_page</span>&gt;
+    &lt;/<span class="pl-ent">channel</span>&gt;
+&lt;/<span class="pl-ent">rss</span>&gt;</pre></div>
+<h2><a id="user-content-author-item" class="anchor" href="#author-item" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Author item</h2>
+<p>Contained inside a wp:wp_author element</p>
+<p><strong>wp:author_login</strong> (optional) Is the author’s WordPress login user name.</p>
+<p><strong>wp:author_email</strong> Is the author’s e-mail address associated with their WordPress account.</p>
+<p><strong>wp:author_display_name</strong> Is the author’s public display name used in instead of the login user name for comments and posts.</p>
+<p><strong>wp:author_first_name</strong> Is the author’s first name.</p>
+<p><strong>wp:author_last_name</strong> Is the author’s last name.</p>
+<h2><a id="user-content-related-item" class="anchor" href="#related-item" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Related item</h2>
+<p>Contained inside a wp:relateds element</p>
+<p><strong>wp:related</strong> Container for one related element. It's quivalent of one  element</p>
+<p><strong>wp:type</strong> Type of the related content. Can be video, article, poll, photo, album, etc.</p>
+<p><strong>wp:title</strong> Title of the realted content</p>
+<p><strong>wp:link</strong> URL for the related content</p>
+<h2><a id="user-content-the-article-type" class="anchor" href="#the-article-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The article type</h2>
+<p><strong>wp:type</strong> (optional) Value must be "article"</p>
+<p><strong>wp:subtitle</strong> Subtitle for news websites</p>
+<p><strong>wp:antetitle</strong> Antetitle for news websites</p>
+<h2><a id="user-content-the-poll-type" class="anchor" href="#the-poll-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The poll type</h2>
+<p><strong>wp:type</strong> (optional) Value must be "poll" for this type</p>
+<p><strong>wp:poll</strong> Subtitle for news websites</p>
+<p><strong>wp:poll_question</strong> Container for a poll question</p>
+<p><strong>wp:poll_option_text</strong> Text answer for the poll option</p>
+<p><strong>wp:poll_option_color</strong> Color answer for the poll option</p>
+<p><strong>wp:poll_option_votes</strong> Poll option container</p>
+<h2><a id="user-content-the-album-type" class="anchor" href="#the-album-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The album type</h2>
+<p><strong>wp:type</strong> (optional) Value must be "album"</p>
+<h2><a id="user-content-the-photo-type" class="anchor" href="#the-photo-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The photo type</h2>
+<p><strong>wp:type</strong> Value must be "photo" for this type</p>
+<p><strong>wp:url</strong> (required) The source URL of the image. Consumers should be able to insert this URL into an <a href="" target="_blank"><img style="max-width:100%;"></a> element. Only HTTP and HTTPS URLs are valid.</p>
+<p><strong>wp:width</strong> (required) The width in pixels of the image specified in the url parameter.</p>
+<p><strong>wp:height</strong> (required) The height in pixels of the image specified in the url parameter.</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">rss</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">media</span>=<span class="pl-s"><span class="pl-pds">"</span>http://search.yahoo.com/mrss/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">dcterms</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/dc/terms/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">fh</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/syndication/history/1.0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">channel</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;LBC&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">link</span>&gt;http://www.lbc.co.uk&lt;/<span class="pl-ent">link</span>&gt;
+        &lt;<span class="pl-ent">description</span>&gt;LBC Videos&lt;/<span class="pl-ent">description</span>&gt;
+        &lt;<span class="pl-ent">item</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">type</span>&gt;photo&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">type</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">width</span>&gt;240&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">width</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">height</span>&gt;160&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">height</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">title</span>&gt;ZB8T0193&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">title</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">contenturl</span>&gt;http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.jpg&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">contenturl</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_name</span>&gt;Bees&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_name</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_url</span>&gt;http://www.flickr.com/photos/bees/&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_url</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_name</span>&gt;Flickr&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_name</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_url</span>&gt;http://www.flickr.com/&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_url</span>&gt;
+        &lt;/<span class="pl-ent">item</span>&gt;
+    &lt;/<span class="pl-ent">channel</span>&gt;
+&lt;/<span class="pl-ent">rss</span>&gt;</pre></div>
+<h2><a id="user-content-the-link-type" class="anchor" href="#the-link-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The link type</h2>
+<p><strong>wp:type</strong> Value must be "link"</p>
+<p><strong>wp:externalurl</strong> URL of the content</p>
+<h2><a id="user-content-the-video-type" class="anchor" href="#the-video-type" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The video type</h2>
+<p><strong>wp:type</strong> Value must be "video"</p>
+<p><strong>wp:width</strong> (required) The width in pixels required to display the video</p>
+<p><strong>wp:height</strong> (required) The height in pixels required to display the video</p>
+<p><strong>wp:contenturl</strong> URL of the content. In this case a video file</p>
+<p><strong>wp:provider_name</strong> Name of the provider</p>
+<p><strong>wp:provider_url</strong> URL of the provider</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">rss</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">media</span>=<span class="pl-s"><span class="pl-pds">"</span>http://search.yahoo.com/mrss/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">dcterms</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/dc/terms/<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">fh</span>=<span class="pl-s"><span class="pl-pds">"</span>http://purl.org/syndication/history/1.0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">channel</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;LBC&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">link</span>&gt;http://www.lbc.co.uk&lt;/<span class="pl-ent">link</span>&gt;
+        &lt;<span class="pl-ent">description</span>&gt;LBC Videos&lt;/<span class="pl-ent">description</span>&gt;
+        &lt;<span class="pl-ent">item</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">type</span>&gt;video&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">type</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">width</span>&gt;240&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">width</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">height</span>&gt;160&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">height</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">title</span>&gt;ZB8T0193&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">title</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">contenturl</span>&gt;http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.mp4&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">contenturl</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_name</span>&gt;Bees&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_name</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_url</span>&gt;http://www.flickr.com/photos/bees/&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">author_url</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_name</span>&gt;Flickr&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_name</span>&gt;
+           &lt;<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_url</span>&gt;http://www.flickr.com/&lt;/<span class="pl-ent">wp</span><span class="pl-ent">:</span><span class="pl-ent">provider_url</span>&gt;
+        &lt;/<span class="pl-ent">item</span>&gt;
+    &lt;/<span class="pl-ent">channel</span>&gt;
+&lt;/<span class="pl-ent">rss</span>&gt;</pre></div>
+
+    
+    
+    
     </div>
 </body>
 </html>
