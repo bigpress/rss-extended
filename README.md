@@ -3,7 +3,7 @@
 The WXR format is based on the Really Simple Syndication or RSS. Originally created to import and export Wordpress websites but without any kind of documentation we have adopted it and formalized it.
 
 
-## Version 1.2
+## Version 1.3 Draft
 
 
 
@@ -22,7 +22,7 @@ The WXR format is based on the Really Simple Syndication or RSS. Originally crea
 **<language>** Is the primary language the site is written in as determined by Settings, General Settings, Language in the WordPress Dashboard. A list of valid codes used to represent the language can be found at http://www.rssboard.org/rss-language-codes.
 
 
-**<wp: wxr_version>** This is our first example of an extended Rss element. We can recognise that it does not belong to the Rss specification as the element contains a colon. Left of the colon contains the elements extension while right is the element name. wp:wxr_version is the version number for the WordPress extension Rss. At the last update to this article in December 2013 the version number was at 1.2.
+**<wp:wxr_version>** This is our first example of an extended Rss element. We can recognise that it does not belong to the Rss specification as the element contains a colon. Left of the colon contains the elements extension while right is the element name. wp:wxr_version is the version number for the WordPress extension Rss. At the last update to this article in December 2013 the version number was at 1.2.
 
 
 **<wp:base_site_url>** Is the root URL  of the WordPress hosting provider.
@@ -31,22 +31,7 @@ The WXR format is based on the Really Simple Syndication or RSS. Originally crea
 **<wp:base_blog_url>** Is the root URL of the WordPress site.
 
 
-**<wp:wp:wp_author>** Contains details on the authors of the site. Each author gets their own wp_author container.
-
-
-**<wp:author_login>** Is the author’s WordPress login user name.
-
-
-**<wp:author_email>** Is the author’s e-mail address associated with their WordPress account.
-
-
-**<wp:author_display_name>** Is the author’s public display name used in instead of the login user name for comments and posts.
-
-
-**<wp:author_first_name>** Is the author’s first name.
-
-
-**<wp:author_last_name>** Is the author’s last name.
+**<wp:next_page>** URL of the next page
 
 
 **<wp:category>** Each container holds information on a category used by the site for the classification of posts. Contains a complete collection of categories associated with the blog. You can view and edit the list within the WordPress Dashboard under Posts, Categories. Each category is given its own <category> element and contains the following 3 4 child elements.
@@ -88,6 +73,12 @@ The WXR format is based on the Really Simple Syndication or RSS. Originally crea
 **<atom:link rel="pub">** Is a URL pointing to the Google designed pubsubhubbub notification service that is supported by WordPress. In my opinion this is easier to implement and use then the alternative <cloud> service that offers similar functionality. http://code.google.com/p/pubsubhubbub/
 
 That is the end of the Rss metadata related elements. Below are the list of child elements contained within the <item></item> elements. Items are repeated multiple times as each item holds a single blog post, article or page. Items contain the details of the unique resources used by the WordPress site. These include Posts, Pages and Media.
+
+
+
+
+
+## The item element
 
 
 **<title>** Is the Title for a page and a post or the Name for media. Title of the blog post or page.
@@ -154,8 +145,9 @@ That is the end of the Rss metadata related elements. Below are the list of chil
 
 
 **<wp:postmeta>** Are containers for newer additions the WXR document format that have not been given their own WXR tags. have been introduced after the original WXR specification. Each <wp:postmeta> element contains 2 child elements.
-<wp:meta_key> Is URL friendly reference key for the meta data element.
-<wp:meta_value> Is the value for the meta data element contained within a character data enclosure.
+
+**<wp:meta_key>** Is URL friendly reference key for the meta data element.
+**<wp:meta_value>** Is the value for the meta data element contained within a character data enclosure.
 
 Below are some of the <wp:meta_key> references currently used by WXR.
 
@@ -172,7 +164,7 @@ reddit; is data related to the reddit social news web service. http://www.reddit
 **<wp:comment>** Is a child element for the post item that contains 12 13 sub-elements listed below. These sub-elements belong to the a single post comment contained within a <wp:comment> element set.
 
 
-**<wp:comment_id>**This is an auto-incremental, numeric, unique identification number given to each comment.
+**<wp:comment_id>** This is an auto-incremental, numeric, unique identification number given to each comment.
 
 
 **<wp:comment_author>** The name of author who submitted the comment. The name value is contained within an unparsed character data enclosure.
@@ -199,7 +191,7 @@ reddit; is data related to the reddit social news web service. http://www.reddit
 **<wp:comment_approved>** A numeric Boolean value to determine if the comment is displayed.
 
 
-**<wp:comment_type**> The type of comment. If left blank it is classed as a normal comment. A value of pingback or trackback means it is a post request notification link http://en.wikipedia.org/wiki/Trackback.
+**<wp:comment_type>** The type of comment. If left blank it is classed as a normal comment. A value of pingback or trackback means it is a post request notification link http://en.wikipedia.org/wiki/Trackback.
 
 
 **<wp:comment_parent>** The numeric identification of the parent comment used when the comment is a response to a pre-existing comment.
@@ -211,8 +203,198 @@ reddit; is data related to the reddit social news web service. http://www.reddit
 **<wp:comment_metadata>** Seems to offer additional data much like the earlier <wp:postmeta> tag.
 
 
-## Version 1.2b
+**<wp:wp_author>** Contains details on the authors of the site. Each author gets their own wp_author container.
+
+
+**<wp:relateds>** Container for related items
+
+
+
+
+
+
+
+```xml
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:fh="http://purl.org/syndication/history/1.0">
+    <channel>
+        <title>LBC</title>
+        <link>http://www.lbc.co.uk</link>
+        <description>LBC Videos</description>
+        <item>
+            <guid isPermaLink="false">g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2</guid>
+            <title>May's Dinner With Juncker: The Inside Story</title>
+            <description>This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.</description>
+            <link>http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX</link>
+            <enclosure url="http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX" length="3342" type="application/x-shockwave-flash" ></enclosure>
+            <media:content url="http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/DOcJ-FxaFrRg4gtDEwOjFsaTowODE7WX" type="video/x--flv" 
+expression="sample" duration="3342" bitrate="3192" lang="eng" ></media:content>
+            <media:title type="plain">May's Dinner With Juncker: The Inside Story</media:title>
+            <media:description type="html">This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.</media:description>
+            <media:thumbnail url="http://cf.c.ooyala.com/g4cDQxYjE6qFqPb0VDWqYFbLxcp8-4R2/promo317917984" width="1280" height="720" time="3342" ></media:thumbnail>
+            <media:category label="Entertainment/Celebrity News">Entertainment/Celebrity News</media:category>
+            <media:text>This is the alarming inside story of Theresa May's first dinner with EU President Jean-Claude Juncker.</media:text>
+            <media:keywords>LBC,Video Feature,Interview,Over 3 mins,AOL One - LBC,Dailymotion - LBC,</media:keywords>
+            <media:activation></media:activation>
+            <media:expiration></media:expiration>
+            <pubDate>Mon, 01 May 2017 14:32:50 GMT</pubDate>
+        </item>
+        <next_page>
+            <![CDATA[http://api.ooyala.com/v2/syndications/23/feed?pcode=44&page_token=1]]>
+        </next_page>
+    </channel>
+</rss>
+```
+
+## Author item
+Contained inside a wp:wp_author element
+
+
+**<wp:author_login>** (optional) Is the author’s WordPress login user name.
+
+
+**<wp:author_email>** Is the author’s e-mail address associated with their WordPress account.
+
+
+**<wp:author_display_name>** Is the author’s public display name used in instead of the login user name for comments and posts.
+
+
+**<wp:author_first_name>** Is the author’s first name.
+
+
+**<wp:author_last_name>** Is the author’s last name.
+
+
+
+
+
+
+## Related item
+Contained inside a wp:relateds element
+
+
+**<wp:related>**
+
+
+**<wp:type>** One of these: video, article, poll, photo
+
+
+**<wp:title>**
+
+
+**<wp:link>**
+
+
+
+
+
+## The article type
+
+**<wp:type>** (optional) Value must be "article"
+
+
 **<wp:subtitle>** Subtitle for news websites
 
 
 **<wp:antetitle>** Antetitle for news websites
+
+
+
+
+
+## The poll type
+
+**<wp:type>** (optional) Value must be "poll"
+
+
+**<wp:poll>** Subtitle for news websites
+
+
+**<wp:poll_question>** Container for a poll question
+
+
+**<wp:poll_option_text>** Text answer for the poll option
+
+
+**<wp:poll_option_color>** Color answer for the poll option
+
+
+**<wp:poll_option_votes>** Poll option container
+
+
+
+
+## The album type
+
+**<wp:type>** (optional) Value must be "album"
+
+
+
+
+## The photo type
+
+
+**<wp:type>** Value must be "photo"
+
+
+**<wp:url>** (required) The source URL of the image. Consumers should be able to insert this URL into an <img> element. Only HTTP and HTTPS URLs are valid.
+
+
+**<wp:width>** (required) The width in pixels of the image specified in the url parameter.
+
+
+**<wp:height>** (required) The height in pixels of the image specified in the url parameter.
+
+
+
+
+
+## The link type
+
+**<wp:link>** Value must be "link"
+
+
+
+
+## The video type
+
+**<wp:type>** Value must be "video"
+
+
+**<wp:width>** (required) The width in pixels required to display the video
+
+
+**<wp:height>** (required) The height in pixels required to display the video
+
+
+**<wp:contenturl>** URL of the content. In this case a video file
+
+
+**<wp:provider_name>** Name of the provider
+
+
+**<wp:provider_url>** URL of the provider
+
+
+```xml
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:fh="http://purl.org/syndication/history/1.0">
+    <channel>
+        <title>LBC</title>
+        <link>http://www.lbc.co.uk</link>
+        <description>LBC Videos</description>
+        <item>
+           <wp:type>photo</wp:type>
+           <wp:width>240</wp:width>
+           <wp:height>160</wp:height>
+           <wp:title>ZB8T0193</wp:title>
+           <wp:contenturl>http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.jpg</wp:contenturl>
+           <wp:author_name>Bees</wp:author_name>
+           <wp:author_url>http://www.flickr.com/photos/bees/</wp:author_url>
+           <wp:provider_name>Flickr</wp:provider_name>
+           <wp:provider_url>http://www.flickr.com/</wp:provider_url>
+        </item>
+    </channel>
+</rss>
+```
+
+
+
