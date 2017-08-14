@@ -245,6 +245,9 @@ expression="sample" duration="3342" bitrate="3192" lang="eng" ></media:content>
 </rss>
 ```
 
+
+
+
 ## Author item
 Contained inside a wp:wp_author element
 
@@ -272,16 +275,16 @@ Contained inside a wp:wp_author element
 Contained inside a wp:relateds element
 
 
-**<wp:related>**
+**<wp:related>** Container for one related element. It's quivalent of one <item> element
 
 
-**<wp:type>** One of these: video, article, poll, photo
+**<wp:type>** Type of the related content. Can be video, article, poll, photo, album, etc.
 
 
-**<wp:title>**
+**<wp:title>** Title of the realted content
 
 
-**<wp:link>**
+**<wp:link>** URL for the related content
 
 
 
@@ -303,7 +306,7 @@ Contained inside a wp:relateds element
 
 ## The poll type
 
-**<wp:type>** (optional) Value must be "poll"
+**<wp:type>** (optional) Value must be "poll" for this type
 
 
 **<wp:poll>** Subtitle for news websites
@@ -333,7 +336,7 @@ Contained inside a wp:relateds element
 ## The photo type
 
 
-**<wp:type>** Value must be "photo"
+**<wp:type>** Value must be "photo" for this type
 
 
 **<wp:url>** (required) The source URL of the image. Consumers should be able to insert this URL into an <img> element. Only HTTP and HTTPS URLs are valid.
@@ -346,11 +349,36 @@ Contained inside a wp:relateds element
 
 
 
+```xml
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:fh="http://purl.org/syndication/history/1.0">
+    <channel>
+        <title>LBC</title>
+        <link>http://www.lbc.co.uk</link>
+        <description>LBC Videos</description>
+        <item>
+           <wp:type>photo</wp:type>
+           <wp:width>240</wp:width>
+           <wp:height>160</wp:height>
+           <wp:title>ZB8T0193</wp:title>
+           <wp:contenturl>http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.jpg</wp:contenturl>
+           <wp:author_name>Bees</wp:author_name>
+           <wp:author_url>http://www.flickr.com/photos/bees/</wp:author_url>
+           <wp:provider_name>Flickr</wp:provider_name>
+           <wp:provider_url>http://www.flickr.com/</wp:provider_url>
+        </item>
+    </channel>
+</rss>
+```
+
+
+
 
 
 ## The link type
 
-**<wp:link>** Value must be "link"
+**<wp:type>** Value must be "link"
+
+**<wp:externalurl>** URL of the content
 
 
 
@@ -382,11 +410,11 @@ Contained inside a wp:relateds element
         <link>http://www.lbc.co.uk</link>
         <description>LBC Videos</description>
         <item>
-           <wp:type>photo</wp:type>
+           <wp:type>video</wp:type>
            <wp:width>240</wp:width>
            <wp:height>160</wp:height>
            <wp:title>ZB8T0193</wp:title>
-           <wp:contenturl>http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.jpg</wp:contenturl>
+           <wp:contenturl>http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.mp4</wp:contenturl>
            <wp:author_name>Bees</wp:author_name>
            <wp:author_url>http://www.flickr.com/photos/bees/</wp:author_url>
            <wp:provider_name>Flickr</wp:provider_name>
